@@ -1,0 +1,58 @@
+{% block navbar %}
+    <footer class="footer bg-custom small text-center text-black">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Dirección</h4>
+                                    <hr class="my-4 mx-auto custom-line" />
+                                    <div class="small text-black-50">
+                                        <a href="https://www.google.com/maps/search/?api=1&query={{ portal.address }}" target="_blank">{{ portal.address }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Email</h4>
+                                    <hr class="my-4 mx-auto custom-line" />
+                                    <div class="small text-black-50">
+                                        <a href="mailto:{{ portal.email }}">{{ portal.email }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Phone</h4>
+                                    <hr class="my-4 mx-auto custom-line" />
+                                    <div class="small text-black-50">
+                                        <a href="tel:+502{{ portal.mobile_phone }}">+502 {{ portal.mobile_phone }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="social d-flex justify-content-center">
+                        {% for social_media_account in social_media_accounts %}
+                            <a class="mx-2" href="{{ social_media_account.url }}" target="_blank">
+                                <i class="fab fa-{{ social_media_account.name }}"></i>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br>
+                <div class="container px-4 px-lg-5 text-right">
+                    <p class="mb-0"> &copy; <span id="year"></span> Copyright: {{ portal.name }}</p>
+                    <br>
+                    <p class="mb-0">Desarrollado por <a href="https://www.linkedin.com/in/luisferdavila/" target="_blank">Luis Dávila</a></p>
+                </div>
+            </footer>
+{% endblock %}

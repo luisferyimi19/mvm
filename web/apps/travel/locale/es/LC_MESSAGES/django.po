@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-07 00:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: apps/travel/admin.py:33 apps/travel/admin.py:52 apps/travel/admin.py:89
+#: apps/travel/admin.py:127
+msgid "Search by name"
+msgstr "Buscar por nombre"
+
+#: apps/travel/apps.py:8 apps/travel/constants.py:33
+msgid "Travel"
+msgstr "Viaje"
+
+#: apps/travel/constants.py:8
+msgid "Url of the social media account"
+msgstr "URL de la cuenta de redes sociales"
+
+#: apps/travel/constants.py:9
+msgid "Social Media Account"
+msgstr "Cuenta de Redes Sociales"
+
+#: apps/travel/constants.py:10
+msgid "Social Media Accounts"
+msgstr "Cuentas de Redes Sociales"
+
+#: apps/travel/constants.py:13
+msgid "Name"
+msgstr "Nombre"
+
+#: apps/travel/constants.py:14
+msgid "Address"
+msgstr "Dirección"
+
+#: apps/travel/constants.py:15
+msgid "Email Address"
+msgstr "Correo Electrónico"
+
+#: apps/travel/constants.py:16
+msgid "Mobile Phone"
+msgstr "Teléfono móvil"
+
+#: apps/travel/constants.py:17
+msgid "Theme Color"
+msgstr "Color del Tema"
+
+#: apps/travel/constants.py:18
+msgid "Is Active"
+msgstr "Esta Activo"
+
+#: apps/travel/constants.py:19
+msgid "Portal"
+msgstr "Portal"
+
+#: apps/travel/constants.py:20
+msgid "Portals"
+msgstr "Portales"
+
+#: apps/travel/constants.py:21
+msgid "URL"
+msgstr "URL"
+
+#: apps/travel/constants.py:22
+msgid "Description"
+msgstr "Descripción"
+
+#: apps/travel/constants.py:23
+msgid "Title"
+msgstr "Título"
+
+#: apps/travel/constants.py:24
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#: apps/travel/constants.py:25
+msgid "End Date"
+msgstr "Fecha de Fin"
+
+#: apps/travel/constants.py:26
+msgid "All Inclusive"
+msgstr "Todo Incluido"
+
+#: apps/travel/constants.py:27
+msgid "Max Passengers"
+msgstr "Máximo Pasajeros"
+
+#: apps/travel/constants.py:28
+msgid "Cover Image"
+msgstr "Imagen de Portada"
+
+#: apps/travel/constants.py:29
+msgid "Inclusions"
+msgstr "Inclusiones"
+
+#: apps/travel/constants.py:30
+msgid "Restrictions"
+msgstr "Restrictiones"
+
+#: apps/travel/constants.py:31
+msgid "Highlight Feature"
+msgstr "Característica Destacada"
+
+#: apps/travel/constants.py:32
+msgid "Image"
+msgstr "Imagen"
+
+#: apps/travel/constants.py:34
+#, fuzzy
+#| msgid "Travel"
+msgid "Travels"
+msgstr "Viajes"
+
+#: apps/travel/constants.py:35
+msgid "First Name"
+msgstr "Nombres"
+
+#: apps/travel/constants.py:36
+msgid "Last Name"
+msgstr "Apellidos"
+
+#: apps/travel/constants.py:37
+msgid "Phone"
+msgstr "Teléfono"
+
+#: apps/travel/constants.py:38
+msgid "Booking Confirmed"
+msgstr "Reserva confirmada"
+
+#: apps/travel/constants.py:39
+msgid "Is Capacity Full"
+msgstr "Está Lleno la Capacidad"
+
+#: apps/travel/constants.py:40
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#: apps/travel/constants.py:41
+msgid "Travel Destination"
+msgstr "Destino de viaje"
+
+#: apps/travel/constants.py:42
+msgid "Travel Destinations"
+msgstr "Destinos de viaje"
+
+#: apps/travel/constants.py:43
+msgid "Passengers"
+msgstr "Pasajeros"
+
+#: apps/travel/constants.py:44
+msgid "Passenger"
+msgstr "Pasajero"
+
+#: apps/travel/constants.py:45
+msgid "Review"
+msgstr "Reseña"
+
+#: apps/travel/constants.py:46
+#, fuzzy
+#| msgid "Restrictions"
+msgid "Reservation"
+msgstr "Restrictiones"
+
+#: apps/travel/constants.py:47
+#, fuzzy
+#| msgid "Restrictions"
+msgid "Reservations"
+msgstr "Restrictiones"
+
+#: apps/travel/constants.py:48
+msgid "Photo"
+msgstr "Foto"
+
+#: apps/travel/constants.py:49
+msgid "Rating"
+msgstr "Clasificación"
+
+#: apps/travel/constants.py:50
+msgid "Travel rating (0.0 - 5.0)"
+msgstr "Calificación de viaje (0.0 - 5.0)"
+
+#: apps/travel/constants.py:51
+msgid "Is gallery image"
+msgstr "¿Es imagen de la galería?"

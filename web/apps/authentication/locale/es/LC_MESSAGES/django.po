@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-07 00:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: apps/authentication/admin.py:37
+msgid "Personal info"
+msgstr "Información Personal"
+
+#: apps/authentication/admin.py:39
+msgid "Permissions"
+msgstr "Permisos"
+
+#: apps/authentication/admin.py:50
+msgid "Important dates"
+msgstr "Fechas importantes"
+
+#: apps/authentication/admin.py:147
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr "El objeto %(name)s con clave principal %(key)r no existe."
+
+#: apps/authentication/admin.py:159
+msgid "Password changed successfully."
+msgstr "Contraseña cambiada con éxito."
+
+#: apps/authentication/admin.py:177
+#, python-format
+msgid "Change password: %s"
+msgstr "Cambiar la contraseña: %s"
+
+#: apps/authentication/apps.py:10
+msgid "Authentication and Authorization"
+msgstr "Autenticacion y Autorizacion"
+
+#: templates/admin/base_site.html:5 templates/admin/base_site.html:14
+msgid "Bienvenidos a Mujeres Viajeras por el Mundo - Portal"
+msgstr ""

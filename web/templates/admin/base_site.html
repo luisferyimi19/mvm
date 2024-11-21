@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Bienvenidos a Mujeres Viajeras por el Mundo - Portal' %}{% endblock %}
+
+{% block extrahead %}
+    <meta name="keywords" content="Bienvenidos a Mujeres Viajeras por el Mundo - Portal">
+    <link rel="shortcut icon" href="{{STATIC_URL}}/favicon.ico" />
+{% endblock %}
+
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Bienvenidos a Mujeres Viajeras por el Mundo - Portal' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

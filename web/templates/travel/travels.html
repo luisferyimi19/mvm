@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_text %}
+    <header class="masthead travel-view-background">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="container text-center">
+              <div class="row row-cols-1">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Calendario de Viajes</h1>
+                        </div>
+                    </div>
+                    <hr class="line-section-title">
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body_structure %}
+<section class="projects-section bg-light" id="home-travels">
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h2 class="text-dark mb-4">Nuestros Próximos Viajes</h2>
+            </div>
+        <div class="col">
+            <div class="col-auto text-end">
+                <div class="dropdown" style="position: relative;">
+                    <select class="form-select" id="yearSelect" aria-label="Seleccionar año">
+                        <option value="" selected>Filtrar por año</option>
+                        {% for year in years %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                    <ul class="dropdown-menu" aria-labelledby="yearSelect" style="position: absolute; top: 100%; left: 0; z-index: 1000;"></ul>
+                </div>
+            </div>
+        </div>
+            <div class="col-lg-8">
+                <p>
+                    Embárcate en un viaje hacia el futuro con nuestras emocionantes y cuidadosamente planificadas escapadas. Descubre los destinos que te esperan en nuestras próximas aventuras.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        {% if travels|length > 0 %}
+            {% for year, travels in travels.items %}
+                <div class="row row-cols-1">
+                    <div class="col" id="year-{{ year }}">
+                        <h2 class="text-dark mb-4">{{ year }}</h2>
+                        <div class="row row-cols-1 row-cols-md-3 g-4 travels-cards">
+                            {% for travel in travels %}
+                                <div class="col">
+                                    <a href="{% url 'travels:travel_details' travel.uuid%}">
+                                        <div class="image">
+                                            <img src="{{ travel.cover_image }}" alt="" class="image-travel zoom-img">
+                                            {% if travel.is_travel_full %}
+                                                <div class="overlay travel-full-message">
+                                                    <p class="h5" style="font-weight: bolder;">GRUPO COMPLETO</p>
+                                                </div>
+                                                <div class="overlay travel-full-cover">
+                                                    <p class="h5" style="font-weight: bolder;">{{travel.name}}</p>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            {% if travel.all_inclusive %}
+                                                                <p class="textmuted" style="font-weight: bolder;">Todo incluido*</p>
+                                                            {% else %}
+                                                                <p class="textmuted" style="font-weight: bolder;">{{travel.highlight_feature}}</p>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-6">
+                                                          <p class="h5 start-date-h5">{{travel.start_date}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% else %}
+                                                <div class="overlay">
+                                                    <p class="h5" style="font-weight: bolder;">{{ travel.name }}</p>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            {% if travel.all_inclusive %}
+                                                                <p class="textmuted" style="font-weight: bolder;">Todo incluido*</p>
+                                                            {% else %}
+                                                                <p class="textmuted" style="font-weight: bolder;">{{ travel.highlight_feature }}</p>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-6">
+                                                          <p class="h5 start-date-h5">{{ travel.start_date }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <br><br>
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="container text-center">
+                  <div class="row row-cols-1">
+                    <div class="col">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center">
+                                <h2 class="text-dark mb-4">No hay viajes por el momento</h2>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <br><br>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header_text %}
+    <header class="masthead travel-detail-background">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="container text-center">
+              <div class="row row-cols-1">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">{{travel.name}} <br> {{travel.start_date}}</h1>
+                        </div>
+                    </div>
+                    <hr class="line-section-title">
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body_structure %}
+    <section class="projects-section bg-light gallery-block compact-gallery" id="home-travels">
+        <div class="container">
+            {% if travel.url %}
+                <div class="row row-cols-2 justify-content-end">
+                    <div class="col">
+                        <div class="col-auto text-end">
+                            <a href="{{ travel.url }}" class="btn btn-custom" target="_blank">
+                                Acceso a más Fotos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            {% endif %}
+            <!-- Gallery -->
+            <div class="row">
+              <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                  {% for image in travel.travel_images.0 %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image }}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                            />
+                        </a>
+                    {% else %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image }}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                              style="height: 350px"
+                            />
+                        </a>
+                    {% endif %}
+                  {% endfor %}
+              </div>
+
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                {% for image in travel.travel_images.1 %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image }}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                              style="height: 350px"
+                            />
+                        </a>
+                    {% else %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image }}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                            />
+                        </a>
+                    {% endif %}
+                  {% endfor %}
+              </div>
+
+              <div class="col-lg-4 mb-4 mb-lg-0">
+               {% for image in travel.travel_images.2 %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image }}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                            />
+                        </a>
+                    {% else %}
+                        <a class="lightbox" href="{{ image }}">
+                            <img
+                              src="{{ image}}"
+                              class="w-100 shadow-1-strong rounded mb-4"
+                              alt="Boat on Calm Water"
+                              style="height: 350px"
+                            />
+                        </a>
+                    {% endif %}
+              {% endfor %}
+            </div>
+            <!-- Gallery -->
+        </div>
+    </section>
+{% endblock %}

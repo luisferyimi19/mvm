@@ -1,0 +1,1 @@
+web: gunicorn mvm.wsgi --log-file -

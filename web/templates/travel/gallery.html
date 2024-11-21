@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_text %}
+    <header class="masthead gallery-view-background">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="container text-center">
+              <div class="row row-cols-1">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Galería</h1>
+                        </div>
+                    </div>
+                    <hr class="line-section-title">
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body_structure %}
+<section class="projects-section bg-light" id="home-travels">
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h2 class="text-dark mb-4">Nuestros Viajes</h2>
+            </div>
+        <div class="col">
+            <div class="col-auto text-end">
+                <div class="dropdown" style="position: relative;">
+                    <select class="form-select" id="yearSelect" aria-label="Seleccionar año">
+                        <option value="" selected>Filtrar por año</option>
+                        {% for year in years %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                    <ul class="dropdown-menu" aria-labelledby="yearSelect" style="position: absolute; top: 100%; left: 0; z-index: 1000;"></ul>
+                </div>
+            </div>
+        </div>
+            <div class="col-lg-8">
+                <p>
+                    ¡Prepárate para embarcarte en un viaje visual inolvidable y descubre la magia y la diversidad de nuestro hermoso planeta a través
+                    de imágenes de los viajes que hemos embarcado!
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        {% if travels|length > 0 %}
+            {% for year, travels in travels.items %}
+                <div class="row row-cols-1">
+                    <div class="col" id="year-{{ year }}">
+                        <h2 class="text-dark mb-4">{{ year }}</h2>
+                        <div class="row row-cols-1 row-cols-md-3 g-4 travels-cards">
+                            {% for travel in travels %}
+                                <div class="col">
+                                    <a href="{% url 'travels:travel_gallery' travel.uuid%}">
+                                        <div class="image">
+                                            <img src="{{ travel.cover_image }}" alt="" class="image-travel zoom-img">
+                                            <div class="overlay">
+                                                <p class="h5" style="font-weight: bolder;">{{ travel.name }}, {{ travel.start_date }}</p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <br><br>
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="container text-center">
+                  <div class="row row-cols-1">
+                    <div class="col">
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center">
+                                <h2 class="text-dark mb-4">No hay imágenes por el momento</h2>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <br><br>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_text %}
+    <header class="masthead contact-background">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="container text-center">
+              <div class="row row-cols-1">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Contáctanos</h1>
+                        </div>
+                    </div>
+                    <hr class="line-section-title">
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body_structure %}
+	<br><br>
+    <section class="ftco-section">
+		<br>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters">
+							<div class="col-lg-6">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3>Contáctanos</h3>
+									<p class="mb-4">
+										Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más
+										información sobre nuestros viajes, no dudes en escribirnos. Nuestro
+										equipo estará encantado de asistirte.
+									</p>
+									<div id="form-message-warning" class="mb-4"></div>
+									<div id="form-message-success" class="mb-4">
+									Tu mensaje fue enviado, ¡gracias!
+									</div>
+									<div class="row mb-4">
+										<div class="col-md-4">
+											<div class="dbox w-100 d-flex align-items-start">
+						        		<div class="text">
+							            <p><span>Dirección:</span> <a href="https://www.google.com/maps/search/?api=1&query={{ portal.address }}" target="_blank">{{ portal.address }}</a></p>
+							          </div>
+						          </div>
+										</div>
+										<div class="col-md-4">
+											<div class="dbox w-100 d-flex align-items-start">
+						        		<div class="text">
+							            <p><span>Teléfono:</span> <a href="tel:+502{{ portal.mobile_phone }}">{{ portal.mobile_phone }}</a></p>
+							          </div>
+									<div class="col-md-4">
+													<div class="dbox w-100 d-flex align-items-start">
+												<div class="text">
+												<p><span>Correo:</span> <a href="mailto:{{ portal.email }}">{{ portal.email }}</a></p>
+											  </div>
+										  </div>
+										</div>
+						          </div>
+										</div>
+									</div>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm" action="{% url 'travels:contact' %}">
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Nombre" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" required>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Correo Electrónico" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" required>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" required>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Mensaje" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px;" required></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Enviar mensaje" class="btn btn-primary" required>
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+									<div class="w-100 social">
+										<h4>Contáctanos por nuestras redes sociales</h4>
+										<p>
+											{% for social_media_account in social_media_accounts %}
+												<a class="mx-2" href="{{ social_media_account.url }}" target="_blank">
+													<i class="fab fa-{{ social_media_account.name }}"></i>
+												</a>
+											{% endfor %}
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img" style="background-image: url('{% static 'assets/img/contact_card.jpg' %}'); background-size: cover;">
+			          		</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<br><br><br><br>
+{% endblock %}

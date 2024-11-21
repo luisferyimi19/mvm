@@ -1,0 +1,52 @@
+from django.utils.translation import gettext_lazy as _
+
+
+class TravelManagementConstants:
+    """docstring for TravelManagementConstants"""
+
+    # Messages
+    URL_OF_THE_SOCIAL_MEDIA_ACCOUNT = _("Url of the social media account")
+    URL_OF_THE_TRAVEL_IMAGES = _("URL of the travel images")
+    SOCIAL_MEDIA_ACCOUNT = _("Social Media Account")
+    SOCIAL_MEDIA_ACCOUNTS = _("Social Media Accounts")
+
+    # Fields
+    NAME = _("Name")
+    ADDRESS = _("Address")
+    EMAIL = _("Email Address")
+    MOBILE_PHONE = _("Mobile Phone")
+    THEME_COLOR = _("Theme Color")
+    IS_ACTIVE = _("Is Active")
+    PORTAL = _("Portal")
+    PORTALS = _("Portals")
+    URL = _("URL")
+    DESCRIPTION = _("Description")
+    TITLE = _("Title")
+    START_DATE = _("Start Date")
+    END_DATE = _("End Date")
+    ALL_INCLUSIVE = _("All Inclusive")
+    MAX_PASSENGERS = _("Max Passengers")
+    COVER_IMAGE = _("Cover Image")
+    INCLUSIONS = _("Inclusions")
+    RESTRICTIONS = _("Restrictions")
+    HIGHLIGHT_FEATURE = _("Highlight Feature")
+    IMAGE = _("Image")
+    TRAVEL = _("Travel")
+    TRAVELS = _("Travels")
+    FIRST_NAME = _("First Name")
+    LAST_NAME = _("Last Name")
+    PHONE = _("Phone")
+    BOOKING_CONFIRMED = _("Booking Confirmed")
+    IS_CAPACITY_FULL = _("Is Capacity Full")
+    CANCELLED = _("Cancelled")
+    TRAVEL_DESTINATION = _("Travel Destination")
+    TRAVEL_DESTINATIONS = _("Travel Destinations")
+    PASSENGERS = _("Passengers")
+    PASSENGER = _("Passenger")
+    REVIEW = _("Review")
+    RESERVATION = _("Reservation")
+    RESERVATIONS = _("Reservations")
+    PHOTO = _("Photo")
+    RATING = _("Rating")
+    TRAVEL_RATING = _("Travel rating (0.0 - 5.0)")
+    IS_GALLERY_IMAGE = _("Is gallery image")
